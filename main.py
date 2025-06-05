@@ -27,3 +27,9 @@ print(df)
 df[(df["region"] == "west") & (df["sales"].isna())]
 print(df)
 
+#5. filling, reemplazar valores faltantes de discount con la media
+#df["discount"] le decimos que de la columna de discount
+#... = df["discount"].fillna(df["discount"].mean()) saque la media de los datos en discount y los espacios vacios los llene con la media
+df["discount"] = df["discount"].fillna(df["discount"].mean())
+print(df)
+
