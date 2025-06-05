@@ -14,3 +14,10 @@ print(df)
 df.loc[df["discount"] <0, "discount"] = pd.NA 
 print(df)
 
+#3. Limpiar datos donde no hay datos en ambas filas de ciertas columnas
+#df = df.dropna() se usa para eliminar filas donde hay valores nulos
+#...(subset = ["nombre de las columna"],) al usar subset le especificamos que se fije en ciertas columnas unicamente
+#...(,how = "all") le especificamos que se elimine la filas solo si los valores de ambas columnas especificadas son nulos
+df = df.dropna(subset=["sales", "discount"], how="all")
+print(df)
+
