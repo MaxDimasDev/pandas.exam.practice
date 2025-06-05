@@ -41,3 +41,11 @@ print(df)
 df.loc[df["sales"].notna() & df["discount"].notna(), "net_sales"] = df["sales"] * (1 - df["discount"]/100)
 print(df)
 
+#7. filtering, filtrar: sales ≥ 200 y discount ≤ 10
+#df[(...)] filtramos el dataframe completo
+#...(df["sales"] >= 200) primera condición: ventas mayores o iguales a 200
+#... & operador AND para combinar condiciones
+#...(df["discount"] <= 10) segunda condición: descuentos menores o iguales a 10%
+df[(df["sales"] >= 200) & (df["discount"] <= 10)]
+print(df)
+
