@@ -21,3 +21,9 @@ print(df)
 df = df.dropna(subset=["sales", "discount"], how="all")
 print(df)
 
+#4. Filtering, buscar filas en donde 2 columnas tienen valores especificos
+#df[(...)]le especificamos de donde queremos buscar los valores
+#(df["region"] == "west") & (df["sales"].isna()) aqui le damos nuestras condicionales, en este caso que la region sea west y que la columna de sales tenga valores nulos
+df[(df["region"] == "west") & (df["sales"].isna())]
+print(df)
+
