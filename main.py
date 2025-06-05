@@ -49,3 +49,9 @@ print(df)
 df[(df["sales"] >= 200) & (df["discount"] <= 10)]
 print(df)
 
+#8. dates and sorting, filtrar por sales no nulo y ordenar por order_date descendente
+#df[df["sales"].notna()] primero filtramos solo filas donde sales NO es nulo
+#....sort_values("order_date", ascending=False) luego ordenamos por fecha descendente (más reciente primero)
+df[df["sales"].notna()].sort_values("order_date", ascending=False)
+print(df)
+
