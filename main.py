@@ -62,3 +62,9 @@ df["order_date"] = pd.to_datetime(df["order_date"])
 df["weekday"] = df["order_date"].dt.day_name()
 print(df)
 
+#10. dropping, eliminar columnas con todos los valores faltantes
+#df = df.dropna(axis=1, how="all") 
+#...axis=1 indica que trabajamos con COLUMNAS (no filas)
+#...how="all" solo elimina columnas donde TODOS los valores son nulos
+df = df.dropna(axis=1, how="all")
+print(df)
