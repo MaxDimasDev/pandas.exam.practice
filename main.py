@@ -55,3 +55,10 @@ print(df)
 df[df["sales"].notna()].sort_values("order_date", ascending=False)
 print(df)
 
+#9. value conversion, convertir fecha a datetime y extraer el nombre del día
+#df["order_date"] = pd.to_datetime(df["order_date"]) convierte la columna a tipo datetime
+#df["weekday"] = df["order_date"].dt.day_name() crea nueva columna con nombre del día (lunes, martes...)
+df["order_date"] = pd.to_datetime(df["order_date"])
+df["weekday"] = df["order_date"].dt.day_name()
+print(df)
+
