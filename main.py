@@ -33,3 +33,11 @@ print(df)
 df["discount"] = df["discount"].fillna(df["discount"].mean())
 print(df)
 
+#6. new columns, calcular net_sales solo si sales y discount no son NaN
+#df.loc[...] usamos para seleccionar filas y columnas específicas
+#...[df["sales"].notna() & df["discount"].notna()] condición: que AMBAS columnas NO tengan valores nulos
+#..., "net_sales"] especificamos que queremos crear/actualizar esta columna
+#... = df["sales"] * (1 - df["discount"]/100) fórmula para calcular el valor neto (sales - descuento)
+df.loc[df["sales"].notna() & df["discount"].notna(), "net_sales"] = df["sales"] * (1 - df["discount"]/100)
+print(df)
+
